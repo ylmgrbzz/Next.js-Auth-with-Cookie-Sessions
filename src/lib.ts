@@ -6,7 +6,11 @@ export interface SessionData {
     username?: string;
     img?: string;
     isPro?: boolean;
+    isLoggedIn: boolean;
+}
 
+export const defaultSession: SessionData = {
+    isLoggedIn: false
 }
 
 export const sessionOptions: SessionOptions = {
