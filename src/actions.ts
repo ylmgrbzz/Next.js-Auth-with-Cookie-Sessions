@@ -37,4 +37,8 @@ export const login = async (
     redirect("/");
 };
 
-export const logout = async () => { }
+export const logout = async () => {
+    const session = await getSession();
+    session.destroy();
+    redirect("/login");
+}
