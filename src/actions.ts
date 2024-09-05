@@ -48,5 +48,11 @@ export const changePremium = async () => {
     const isPro = !session.isPro;
     session.isPro = isPro;
     await session.save();
+}
 
+export const changeUsername = async (formData: FormData) => {
+    const session = await getSession();
+    const username = formData.get("username") as string;
+    session.username = username;
+    await session.save();
 }

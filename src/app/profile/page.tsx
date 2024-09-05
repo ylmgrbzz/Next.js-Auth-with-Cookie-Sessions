@@ -1,4 +1,4 @@
-import { changePremium, getSession } from "@/actions";
+import { changePremium, changeUsername, getSession } from "@/actions";
 import { redirect } from "next/navigation";
 import React from "react";
 
@@ -22,7 +22,7 @@ const ProfilePage = async () => {
         <button>{session.isPro ? "Cancel" : "Buy"} Premium</button>
       </form>
 
-      {/* <form action={changeUsername}>
+      <form action={changeUsername}>
         <input
           type="text"
           name="username"
@@ -30,7 +30,7 @@ const ProfilePage = async () => {
           placeholder={session.username}
         />
         <button>Update</button>
-      </form> */}
+      </form>
     </div>
   );
 };
