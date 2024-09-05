@@ -40,5 +40,13 @@ export const login = async (
 export const logout = async () => {
     const session = await getSession();
     session.destroy();
-    redirect("/login");
+    redirect("/");
+}
+
+export const changePremium = async () => {
+    const session = await getSession();
+    const isPro = !session.isPro;
+    session.isPro = isPro;
+    await session.save();
+
 }
